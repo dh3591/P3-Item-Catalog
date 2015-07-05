@@ -1,0 +1,32 @@
+{% extends "appmain.html" %}
+{% block content %}
+{% include "appheader.html" %}
+	<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>Edit Product</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Product Name:</label>
+					<input type ="text" maxlength="100" class="form-control" name="name" value="{{item.name}}">
+					<div class="padding-bottom"></div>
+					<label for="description">Description:</label>
+					<input type ="text" maxlength="250" class="form-control" name="description" value="{{item.description}}">
+					<div class="padding-bottom"></div>
+					<button type="submit" class="btn btn-default" id="submit" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save Changes</button>
+				</div>
+			</form>
+			<a href = '{{url_for('showCatalogs')}}'>
+				<button class="btn btn-default delete">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button>
+			</a>
+		</div>
+	</div>
+{% endblock %}
