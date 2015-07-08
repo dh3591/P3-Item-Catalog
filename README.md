@@ -15,7 +15,9 @@ An application that provides a list of products within a variety of catalogs as 
     Note: JSON is available at...
 
       /catalog/JSON - provides a serialized list of catalogs
+      
       /catalog/<int:catalog_id>/product/JSON - provides a serialized list of products for specified catalog id
+      
       /catalog/<int:catalog_id>/product/<int:product_id>/JSON - provides a serialized specified product from specified catalog using catalog and product ids
 
 5. if not logged in with facebook or google+ all information will be read only
