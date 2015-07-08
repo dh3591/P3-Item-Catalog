@@ -4,7 +4,7 @@ An application that provides a list of products within a variety of catalogs as 
 
 1. download all Files keeping folders in tact
     
-    Note: app uses Python 2.7 with imported libraries from Flask 0.10 web framework, SQLAlchemy 0.9 and Oauth2
+    Note: app uses Python 2.7 with imported libraries from Flask 0.9 web framework, SQLAlchemy 0.9 and Oauth2
 
 2. database_setup.py will create your initial blank database
 
