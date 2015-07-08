@@ -280,9 +280,9 @@ def newCatalog():
 # Edit a catalog
 @app.route('/catalog/<int:catalog_id>/edit/', methods=['GET', 'POST'])
 def editCatalog(catalog_id):
-    editedCatalog = session.query(Catalog).filter_by(id=catalog_id).one()
     if 'username' not in login_session:
         return redirect('/login')
+    editedCatalog = session.query(Catalog).filter_by(id=catalog_id).one()
     if editedCatalog.user_id != login_session['user_id']:
         return "<script>function myFunction() {alert('You are not authorized to edit this catalog. Please create your own catalog in order to edit.');}</script><body onload='myFunction()''>"
     if request.method == 'POST':
@@ -296,9 +296,9 @@ def editCatalog(catalog_id):
 # Delete a catalog
 @app.route('/catalog/<int:catalog_id>/delete/', methods=['GET', 'POST'])
 def deleteCatalog(catalog_id):
-    catalogToDelete = session.query(Catalog).filter_by(id=catalog_id).one()
     if 'username' not in login_session:
         return redirect('/login')
+    catalogToDelete = session.query(Catalog).filter_by(id=catalog_id).one()
     if catalogToDelete.user_id != login_session['user_id']:
         return "<script>function myFunction() {alert('You are not authorized to delete this catalog. Please create your own catalog in order to delete.');}</script><body onload='myFunction()''>"
     if request.method == 'POST':
